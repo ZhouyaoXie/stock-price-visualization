@@ -9,7 +9,7 @@ import math
 st.set_page_config(layout="wide")
 
 @st.cache
-def load_data(path):
+def load_data():
     path = "https://raw.githubusercontent.com/ZhouyaoXie/stock-price-visualization/main/all_stocks_5yr.csv"
     df = pd.read_csv(path)
     df['date'] = pd.to_datetime(df['date']).dt.date
