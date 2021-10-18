@@ -15,8 +15,8 @@ def load_data():
     df['date'] = pd.to_datetime(df['date']).dt.date
     return df[['Name', 'date', 'close','volume']]
 
-data_load_state = st.markdown('*Loading data...*')
-df = load_data(path)
+data_load_state = st.markdown('*Loading data... If you are running this for the first time, this is going to take about 30 seconds.*')
+df = load_data()
 data_load_state.markdown('*Loading graphics...*')
 
 st.markdown("This interactive web app explores stock prices of S&P 500 companies from 2013-02-08 to 2018-02-07.\n \
@@ -41,7 +41,7 @@ col1, col2 = st.columns(2)
 
 st.sidebar.markdown("**About**")
 st.sidebar.markdown("Author: Zhouyao Xie")
-st.sidebar.markdown("Github: ZhouyaoXie")
+st.sidebar.markdown("Github: [ZhouyaoXie](https://github.com/ZhouyaoXie)")
 st.sidebar.markdown("CMU 05839 interactive Data Science")
 st.sidebar.markdown("Instructor: John Stamper")
 st.sidebar.markdown("**Input Fields**")
