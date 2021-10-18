@@ -1,7 +1,7 @@
 # stock-price-visualization
 
 
-This interactive web app explores stock prices of S&P 500 companies from 2013-02-08 to 2018-02-07. The line plot on the left panel displays the stock price over time; the heatmap on the right panel shows the correlation structure of stock prices. The dataset comes from the [S&P 500 stock data](https://www.kaggle.com/camnugent/sandp500) dataset on Kaggle and is compiled by Cam Nugent.
+[This interactive web app](https://share.streamlit.io/zhouyaoxie/stock-price-visualization/main/app.py) explores stock prices of S&P 500 companies from 2013-02-08 to 2018-02-07. The line plot on the left panel displays the stock price over time; the heatmap on the right panel shows the correlation structure of stock prices. The dataset comes from the [S&P 500 stock data](https://www.kaggle.com/camnugent/sandp500) dataset on Kaggle and is compiled by Cam Nugent.
 
 
 ## Questions
