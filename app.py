@@ -6,14 +6,13 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 import datetime
 import math
+import urllib.request
 
 st.set_page_config(layout="wide")
 
-
-path = "X:/Master/2021Fall/05839/assignment-2-ZhouyaoXie/sp_stock_data/all_stocks_5yr.csv"
-
 @st.cache
 def load_data(path):
+    path = "https://raw.githubusercontent.com/ZhouyaoXie/stock-price-visualization/main/all_stocks_5yr.csv"
     df = pd.read_csv(path)
     df['date'] = pd.to_datetime(df['date']).dt.date
     return df[['Name', 'date', 'close','volume']]
@@ -44,7 +43,7 @@ col1, col2 = st.columns(2)
 
 st.sidebar.markdown("**About**")
 st.sidebar.markdown("Author: Zhouyao Xie")
-st.sidebar.markdown("Github: Zhouyao Xie")
+st.sidebar.markdown("Github: ZhouyaoXie")
 st.sidebar.markdown("CMU 05839 interactive Data Science")
 st.sidebar.markdown("Instructor: John Stamper")
 st.sidebar.markdown("**Input Fields**")
