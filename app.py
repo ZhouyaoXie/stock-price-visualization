@@ -15,7 +15,8 @@ def load_data():
     df['date'] = pd.to_datetime(df['date']).dt.date
     return df[['Name', 'date', 'close','volume']]
 
-data_load_state = st.markdown('*Loading data... If you are running this for the first time, this is going to take about 30 seconds.*')
+data_load_state = st.markdown('*Loading data... \
+    If this is the first time you are launching this app, this is going to take about 1 minute.*')
 df = load_data()
 data_load_state.markdown('*Loading graphics...*')
 
@@ -23,10 +24,6 @@ st.markdown("This interactive web app explores stock prices of S&P 500 companies
 The line plot on the left panel displays the stock price against time; the heatmap on the right panel shows \
 the correlation structure of stock prices.\n The dataset comes from the [S&P 500 stock data](https://www.kaggle.com/camnugent/sandp500)\
  dataset on Kaggle and is compiled by Cam Nugent.")
-st.markdown("#### Questions \n Some of the questions you could explore with this interactive visualization include:\n\
-- Time series analysis: How does the stock price of a company change over time?\n \
-- Comparative analysis: How do the stock prices of different companies compare?\n \
-- Correlation analysis: How are the stock prices of a group of companies correlated with each other?")
 st.markdown("#### Instructions \n The following input fields are provided on the sidebar:\n  \
 - Select any number of S&P 500 companies using their ticker symbols from the drop down list.\n \
 - Select a start date and end date. The range should be within 2013-02-08 and 2018-02-07.\n \
@@ -131,7 +128,7 @@ col2.pyplot(fig2)
 def convert_df(df):
     return df.to_csv()
 
-with st.expander("Click here to view and download the selected data:"):
+with st.expander("Click here to view and download your selected data:"):
     col3, col4 = st.columns(2)
     col3.download_button('Download wide format data', convert_df(wide_df), file_name = 'stock_price_wide.csv')
     col4.download_button('Download long format data', convert_df(df_display), file_name = 'stock_price_long.csv')
